@@ -1,5 +1,6 @@
 import json
 import boto3
+import asyncio
 
 #AWS region config
 aws_region = 'us-east-2'
@@ -12,7 +13,7 @@ healthPath = '/health'
 productPath = '/product'
 productsPath = '/products'
 
-def lambdaHandler(event, context):
+async def lambdaHandler(event, context):
     print('Request event: ', event)
     response = None
     
